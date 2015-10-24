@@ -1,26 +1,22 @@
-package com.udacity.gradle.builditbigger;
+package com.laquysoft.displayjoke;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-
-import com.laquysoft.displayjoke.DisplayJokeActivity;
-import com.laquysoft.joketelling.JokeTeller;
+import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class DisplayJokeActivity extends ActionBarActivity {
 
-    JokeTeller jokeTeller;
+    String mJoke;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        jokeTeller = new JokeTeller();
+        setContentView(R.layout.displayjoke_activity);
+        mJoke = getIntent().getStringExtra("jokestring");
+        tellJoke(mJoke);
     }
 
 
@@ -46,16 +42,9 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*
-
-    There we go! Now we can launch the activity from our library, and it's
-    easy to reuse that activity between different apps!
-
-     */
-
-    public void launchLibraryActivity(View view){
-        Intent myIntent = new Intent(this, DisplayJokeActivity.class);
-        myIntent.putExtra("jokestring", jokeTeller.tellJoke());
-        startActivity(myIntent);
+    public void tellJoke(String joke){
+        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
     }
+
+
 }
