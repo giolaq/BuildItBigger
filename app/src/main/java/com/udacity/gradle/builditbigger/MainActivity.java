@@ -1,26 +1,25 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.laquysoft.displayjoke.DisplayJokeActivity;
-import com.laquysoft.joketelling.JokeTeller;
 
 
 public class MainActivity extends ActionBarActivity {
 
-    JokeTeller jokeTeller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        jokeTeller = new JokeTeller();
     }
 
 
@@ -54,8 +53,6 @@ public class MainActivity extends ActionBarActivity {
      */
 
     public void launchLibraryActivity(View view){
-        Intent myIntent = new Intent(this, DisplayJokeActivity.class);
-        myIntent.putExtra("jokestring", jokeTeller.tellJoke());
-        startActivity(myIntent);
+        new JokeRetrieverAsynchTask().execute(this);
     }
 }
