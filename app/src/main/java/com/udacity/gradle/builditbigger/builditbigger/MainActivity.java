@@ -1,15 +1,10 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.builditbigger;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
-import com.laquysoft.displayjoke.DisplayJokeActivity;
 
 
 public class MainActivity extends ActionBarActivity {

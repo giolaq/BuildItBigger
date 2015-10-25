@@ -5,11 +5,13 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.udacity.gradle.builditbigger"
+        applicationId "com.udacity.gradle.builditbigger.builditbigger"
         minSdkVersion 10
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled = true
+
     }
     buildTypes {
         release {
@@ -17,11 +19,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        free {
+            applicationId 'com.udacity.gradle.builditbigger.builditbigger.free'
+        }
+        paid {
+            applicationId 'com.udacity.gradle.builditbigger.builditbigger.paid'
+        }
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':displayjoke')
+
+    freeCompile project( path:':displayjoke', configuration: 'freeRelease')
+    paidCompile project( path:':displayjoke', configuration: 'paidRelease')
+
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile project(path: ':jokebackend', configuration: 'android-endpoints')
 }

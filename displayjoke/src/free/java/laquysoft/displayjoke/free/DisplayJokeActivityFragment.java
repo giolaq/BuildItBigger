@@ -1,4 +1,4 @@
-package com.laquysoft.displayjoke;
+package laquysoft.displayjoke.free;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.laquysoft.displayjoke.R;
 
 
 /**

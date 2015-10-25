@@ -1,12 +1,10 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.builditbigger;
 
 import android.test.AndroidTestCase;
-import android.test.mock.MockContext;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.laquysoft.builditbigger.backend.myApi.MyApi;
-import com.udacity.gradle.builditbigger.JokeRetrieverAsynchTask;
 
 import java.io.IOException;
 
