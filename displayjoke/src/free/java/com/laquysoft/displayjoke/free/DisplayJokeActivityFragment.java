@@ -1,4 +1,4 @@
-package laquysoft.displayjoke.free;
+package com.laquysoft.displayjoke.free;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
